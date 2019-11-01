@@ -18,11 +18,4 @@ class Member extends Authenticatable
         'password', 'api_token',
     ];
 
-    function record()
-    {
-        $information = Member::where(function ($query) {
-            $query->where('remittance', 'account')->orWhere('payee', 'account');
-        });
-    }
-
 }

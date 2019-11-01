@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Str;
 use Validator;
 
-class MemberController extends Controller
+class MemberController extends BaseController
 {
     /**
      * Display a listing of the resource.
@@ -18,13 +18,14 @@ class MemberController extends Controller
      */
     public function index()
     {
-        $records = Record::orderBy('created_at', 'DESC')->paginate(5);
-        dd($records);
-        $member = [
-            'account' => Auth::user()->account,
-            'balance' => Auth::user()->balance,
-        ];
-        return $this->sendResponse($member, $records->toArray(), 'Records retrieved successfully.');
+        $account = Auth::user()->account;
+        $records = Record::where('remittance', $account)->orWhere('payee', $account)->get();
+        $balance = Auth::user()->balance;
+        $message = "and your balance is $balance";
+        if($records){
+            return $this->sendResponse( $records->toArray(), $message);
+        }else
+            return "You have no transfer record.";
     }
 
     /**
@@ -37,7 +38,7 @@ class MemberController extends Controller
     {
         try {
             $request->validate([
-                'account' => ['required', 'max:255', 'unique:members'],
+                'account' => ['required', 'numeric', 'max:10000000000', 'unique:members'],
                 'password' => ['required', 'string', 'min:6', 'max:12'],
             ]);
             $apiToken = Str::random(10);
@@ -68,7 +69,7 @@ class MemberController extends Controller
     {
         $input = $request->all();
         $validator = Validator::make($input, [
-            'account' => ['string', 'unique:members'],
+            'account' => ['string','numeric', 'max:10000000000', 'unique:members'],
             'password' => ['string', 'min:6', 'max:12'],
         ]);
         if ($validator->fails()) {
