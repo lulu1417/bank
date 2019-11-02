@@ -1,18 +1,18 @@
 <?php
+
 namespace App\Http\Controllers;
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller as Controller;
 class BaseController
 {
     public function sendResponse($result, $message)
     {
         $response = [
             'success' => true,
-            'data'    => $result,
+            'data' => $result,
             'message' => $message,
         ];
         return response()->json($response, 200);
     }
+
     /**
      * return error response.
      *
@@ -24,9 +24,10 @@ class BaseController
             'success' => false,
             'message' => $error,
         ];
-        if(!empty($errorMessages)){
+        if (!empty($errorMessages)) {
             $response['data'] = $errorMessages;
         }
         return response()->json($response, $code);
     }
+
 }

@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="643c88b8-74dd-4144-86b9-8259bcf000b1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/BaseController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/php-test-framework.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/AccountController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2019_11_01_062201_add_paid_to_members.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2019_11_02_072435_create_passbooks_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BaseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BaseController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MemberController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MemberController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TransferController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TransferController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Member.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Member.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,7 +29,7 @@
   <component name="PhpTemplates">
     <option name="NEW_PHP_FILE_LAST_EXTENSION" value="ctp" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.2">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
       <path value="$PROJECT_DIR$/vendor/symfony/service-contracts" />
@@ -117,14 +119,18 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1SuSXun83EglBhDEwfVPhkSuD3p" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -158,7 +164,8 @@
       <workItem from="1572439360705" duration="7431000" />
       <workItem from="1572447232662" duration="363000" />
       <workItem from="1572484388084" duration="12942000" />
-      <workItem from="1572529035672" duration="12286000" />
+      <workItem from="1572529035672" duration="15431000" />
+      <workItem from="1572669925837" duration="5740000" />
     </task>
     <servers />
   </component>
@@ -170,10 +177,15 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

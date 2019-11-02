@@ -15,6 +15,8 @@ class CreatePassbooksTable extends Migration
     {
         Schema::create('passbooks', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('type'); //deposit or withdraw
+            $table->integer('amount');
             $table->timestamps();
         });
     }

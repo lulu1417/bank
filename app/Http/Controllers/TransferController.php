@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\AccountController as AccountController;
 use App\Member;
 use App\Record;
 use Illuminate\Http\Request;
@@ -16,10 +17,11 @@ class TransferController
 
         //deduct remittance's money
         $remittance = Auth::user();
-        $this->deduct($amount, $remittance);
+        AccountController::deduct($amount, $remittance);
+
         //increase payee's money
         $payee = Member::where('account', $request->account)->first();
-        $this->increase($amount, $payee);
+        AccountController::increase($amount, $payee);
 
         //make transfer record
         $create = Record::create([
@@ -32,17 +34,4 @@ class TransferController
 
     }
 
-    protected function increase($amount, $account)
-    {
-        $account->balance += $amount;
-        $account->fill(['balance' => $account->balance]);
-        $account->save();
-    }
-
-    protected function deduct($amount, $account)
-    {
-        $account->balance -= $amount;
-        $account->fill(['balance' => $account->balance]);
-        $account->save();
-    }
 }

@@ -1,14 +1,15 @@
 <?php
 namespace App\Http\Controllers;
+
 class AccountController{
-    public function increase($amount, $account)
+    static function increase($amount, $account)
     {
         $account->balance += $amount;
         $account->fill(['balance' => $account->balance]);
         $account->save();
     }
 
-    public function deduct($amount, $account)
+    static function deduct($amount, $account)
     {
         $account->balance -= $amount;
         $account->fill(['balance' => $account->balance]);

@@ -14,7 +14,7 @@ class AddPaidToMembers extends Migration
     public function up()
     {
         Schema::table('members', function (Blueprint $table) {
-            //
+            $table->string('referral')->nullable();
         });
     }
 
